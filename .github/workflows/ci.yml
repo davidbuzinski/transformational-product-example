@@ -20,5 +20,5 @@ jobs:
       - name: Upload built application
         uses: actions/upload-artifact@v4
         with:
-          name: compiled-function
+          name: hellostandaloneApplication
           path: hellostandaloneApplication
