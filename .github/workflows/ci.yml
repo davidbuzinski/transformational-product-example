@@ -17,3 +17,7 @@ jobs:
         uses: matlab-actions/run-command@v2
         with:
           command: compiler.build.standaloneApplication("hello.m");
+      - uses: actions/upload-artifact@v4
+        with:
+          name: compiled-function
+          path: hello
