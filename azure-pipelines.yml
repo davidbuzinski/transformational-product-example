@@ -1,0 +1,13 @@
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: InstallMATLAB@1
+  inputs:
+    products: 'MATLAB_Compiler'
+- task: RunMATLABCommand@1
+  inputs:
+    command: 'compiler.build.standaloneApplication("hello.m");'
