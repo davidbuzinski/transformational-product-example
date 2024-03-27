@@ -11,7 +11,7 @@ jobs:
       - matlab/install:
           products: MATLAB_Compiler
       - matlab/run-command:
-          command: 'compiler.build.standaloneApplication("hello.m");'
+          command: compiler.build.standaloneApplication("hello.m")
 
 workflows:
   build:
