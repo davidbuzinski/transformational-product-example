@@ -10,6 +10,7 @@ jobs:
       image: ubuntu-2204:current
     steps:
       - checkout
-      - matlab/install
+      - matlab/install:
+          products: MATLAB_Compiler
       - matlab/run-command:
           command: 'compiler.build.standaloneApplication("hello.m");'
