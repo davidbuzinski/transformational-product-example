@@ -2,6 +2,8 @@ version: 2.1
 orbs:
   matlab: mathworks/matlab@1
 
+context: MLM_LICENSE_TOKEN
+
 jobs:
   build:
     machine:
