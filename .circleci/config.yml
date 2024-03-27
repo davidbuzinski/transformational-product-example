@@ -12,4 +12,4 @@ jobs:
       - checkout
       - matlab/install
       - matlab/run-command:
-          command: ver
+          command: 'compiler.build.standaloneApplication("hello.m");'
