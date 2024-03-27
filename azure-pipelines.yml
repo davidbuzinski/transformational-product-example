@@ -10,6 +10,6 @@ steps:
     products: MATLAB_Compiler
 - task: RunMATLABCommand@1
   inputs:
-    command: compiler.build.standaloneApplication("hello.m");
+    command: compiler.build.standaloneApplication("hello.m")
   env:
     MLM_LICENSE_TOKEN: $(MLM_LICENSE_TOKEN)
