@@ -7,5 +7,5 @@ steps:
 - task: RunMATLABCommand@1
   inputs:
     command: compiler.build.standaloneApplication("hello.m")
-  env:
-    MLM_LICENSE_TOKEN: abc123
+  # env:
+  #   MLM_LICENSE_TOKEN: abc123
