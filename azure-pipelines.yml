@@ -8,4 +8,4 @@ steps:
   inputs:
     command: compiler.build.standaloneApplication("hello.m")
   env:
-    MLM_LICENSE_TOKEN: $(MLM_LICENSE_TOKEN)
+    MLM_LICENSE_TOKEN: abc123
