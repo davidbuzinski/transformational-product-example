@@ -3,8 +3,8 @@ on: [push]
 env:
   MLM_LICENSE_TOKEN: ${{ secrets.MLM_LICENSE_TOKEN }}
 jobs:
-  my-job:
-    name: Run MATLAB Script
+  build-app:
+    name: Build Standalone Application
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -22,3 +22,15 @@ jobs:
         with:
           name: hellostandaloneApplication
           path: hellostandaloneApplication
+  test-app:
+    name: Test Standalone Application
+    runs-on: ubuntu-latest
+    container:
+      image: containers.mathworks.com/matlab-runtime:r2023b
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: hellostandaloneApplication
+          path: hellostandaloneApplication
+      - name: Test running standalone app
+        run: ./hellostandaloneApplication/run_hello.sh
