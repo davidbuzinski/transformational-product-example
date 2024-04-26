@@ -37,4 +37,4 @@ jobs:
       - name: Test running standalone app
         run: |
           chmod +x ./hellostandaloneApplication/run_hello.sh
-          ./hellostandaloneApplication/run_hello.sh
+          ./hellostandaloneApplication/run_hello.sh /opt/matlabruntime/R2023b
