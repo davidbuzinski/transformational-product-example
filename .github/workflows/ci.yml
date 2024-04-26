@@ -16,4 +16,9 @@ jobs:
       - name: Run script
         uses: matlab-actions/run-command@v2
         with:
-          command: compiler.build.standaloneApplication("hello.m")
+          command: compiler.build.standaloneApplication("hello.m");
+      - name: Upload built application
+        uses: actions/upload-artifact@v4
+        with:
+          name: hellostandaloneApplication
+          path: hellostandaloneApplication
