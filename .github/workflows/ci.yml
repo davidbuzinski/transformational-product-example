@@ -28,7 +28,7 @@ jobs:
     needs: build-app
     runs-on: ubuntu-latest
     container:
-      image: containers.mathworks.com/matlab-runtime:r2023b
+      image: containers.mathworks.com/matlab-runtime:r2024a
     steps:
       - uses: actions/download-artifact@v4
         with:
