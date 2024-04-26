@@ -38,4 +38,4 @@ jobs:
         run: |
           chmod +x ./hellostandaloneApplication/run_hello.sh
           chmod +x ./hellostandaloneApplication/hello
-          ./hellostandaloneApplication/run_hello.sh /opt/matlabruntime/R2023b
+          ./hellostandaloneApplication/run_hello.sh /opt/matlabruntime/R2024a
