@@ -25,6 +25,7 @@ jobs:
           path: hellostandaloneApplication
   test-app:
     name: Test Standalone Application
+    needs: build-app
     runs-on: ubuntu-latest
     container:
       image: containers.mathworks.com/matlab-runtime:r2023b
@@ -34,4 +35,6 @@ jobs:
           name: hellostandaloneApplication
           path: hellostandaloneApplication
       - name: Test running standalone app
-        run: ./hellostandaloneApplication/run_hello.sh
+        run: |
+          chmod +x ./hellostandaloneApplication/run_hello.sh
+          ./hellostandaloneApplication/run_hello.sh
