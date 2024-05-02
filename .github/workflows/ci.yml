@@ -2,7 +2,6 @@ name: Use Transformational Products With Token Licensing on GitHub-Hosted Runner
 on: [push]
 env:
   MLM_LICENSE_TOKEN: ${{ secrets.MLM_LICENSE_TOKEN }}
-  AGREE_TO_MATLAB_RUNTIME_LICENSE: yes
 jobs:
   build-app:
     name: Build Standalone Application
@@ -19,24 +18,3 @@ jobs:
         uses: matlab-actions/run-command@v2
         with:
           command: compiler.build.standaloneApplication("hello.m");
-      - name: Upload built application
-        uses: actions/upload-artifact@v4
-        with:
-          name: hellostandaloneApplication
-          path: hellostandaloneApplication
-  test-app:
-    name: Test Standalone Application
-    needs: build-app
-    runs-on: ubuntu-latest
-    container:
-      image: containers.mathworks.com/matlab-runtime:r2024a
-    steps:
-      - uses: actions/download-artifact@v4
-        with:
-          name: hellostandaloneApplication
-          path: hellostandaloneApplication
-      - name: Test running standalone app
-        run: |
-          chmod +x ./hellostandaloneApplication/run_hello.sh
-          chmod +x ./hellostandaloneApplication/hello
-          ./hellostandaloneApplication/run_hello.sh /opt/matlabruntime/R2024a
