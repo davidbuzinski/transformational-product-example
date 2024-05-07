@@ -1,20 +1,11 @@
-name: Use Transformational Products With Token Licensing on GitHub-Hosted Runner
+name: Run MATLAB Tests
 on: [push]
 env:
   MLM_LICENSE_TOKEN: ${{ secrets.MLM_LICENSE_TOKEN }}
 jobs:
-  build-app:
-    name: Build Standalone Application
+  my-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
-      - name: Set up MATLAB
-        uses: matlab-actions/setup-matlab@v2
-        with:
-          products: MATLAB_Compiler
-          cache: true
-      - name: Run script
-        uses: matlab-actions/run-command@v2
-        with:
-          command: compiler.build.standaloneApplication("hello.m");
+      - uses: actions/checkout@v4
+      - uses: matlab-actions/setup-matlab@v2
+      - uses: matlab-actions/run-tests@v2
